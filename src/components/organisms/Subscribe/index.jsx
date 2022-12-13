@@ -4,25 +4,26 @@ import BtnSubscribe from "../../atoms/BtnSubscribe";
 const Subscribe = () =>{
     return(
         <>
-        <div className="bg-gray-100 pb-20">
-            <div className="mx-36 bg-white rounded shadow-lg">
-                <div className="grid grid-cols-2" >
-                    <div className="p-8">
-                        <p className="font-medium text-3xl leading-10">
-                            Subscribe Now for 
-                            <br/> Get Special Features!
-                        </p>
-                        <p className="font-normal text-sm leading-10 mt-2">
-                            Let's subscribe with us and find the fun.
-                        </p>
-                    </div>
+            <div className="bg-gray-100">
+                <div className="max-w-6xl mx-auto w-full pb-20 px-6">
+                    <div className="bg-white rounded-xl shadow-xl">
+                        <div className="block sm:flex p-10 justify-around">
+                            <div className="">
+                                <p className="font-bold text-xl xl:font-medium xl:text-3xl xl:leading-10">
+                                    Subscribe Now for Get Special Features!
+                                </p>
+                                <p className="font-light text-xs xl:font-normal xl:text-sm leading-10 my-2">
+                                    Let's subscribe with us and find the fun.
+                                </p>
+                            </div>
 
-                    <div className="flex items-center justify-end p-10">
-                        <BtnSubscribe/>
+                            <div className="flex items-center justify-end">
+                                <BtnSubscribe/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </>
     )
 }

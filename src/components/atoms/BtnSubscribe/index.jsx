@@ -6,7 +6,7 @@ const BtnSubscribe = (props) => {
                 <div>
                     <button 
                     type="button" 
-                    className="inlene-block px-10 py-3 
+                    className="inline-block px-10 py-3 
                     font-rubik bg-red-600 text-white font-medium text-md 
                     leading-tight rounded shadow-lg
                     hover:bg-white hover:shadow-lg hover:text-red-600

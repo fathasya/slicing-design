@@ -4,13 +4,13 @@ import Location from '../../../assets/img/location.png';
 const Locations = () =>{
     return(
         <>
-            <div className='inline-flex p-10 items-center justify-center'>
+            <div className='border-x-2 border-[#EEEFF2] w-full flex items-center justify-center sm:space-x-9'>
                 <div>
-                    <img src={Location} width="40" className='mr-5'/>
+                    <img src={Location} className='w-7 sm:w-10 mr-5'/>
                 </div>
                 <div>
-                    <b>30+</b>
-                    <p>Locations</p>
+                    <p className='font-bold text-xs sm:font-bold sm:text-base'>30+</p>
+                    <p className='font-light sm:font-normal text-xs sm:text-base'>Locations</p>
                 </div>
             </div>
         </>

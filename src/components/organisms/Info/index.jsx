@@ -6,21 +6,12 @@ import Servers from "../../molecules/Servers";
 const Info = () =>{
     return(
         <>
-        <div className="w-3/4 mx-36 rounded shadow-lg ">
-            <div className="grid grid-cols-3 flex justify-around">
+        <div className="max-w-6xl mx-auto px-6 w-full drop-shadow-lg">
+            <div className="w-full sm:py-9 py-5 rounded-xl bg-white border border-gray-100 grid grid-cols-3 place-items-center">
                 <Users/>
                 <Locations/>                
                 <Servers/>
             </div>
-            {/* <div className="grid-cols-4">
-                <Users/>
-            </div>
-            <div className="grid-cols-4">
-                <Locations/>
-            </div>
-            <div className="grid-cols-4">
-                <Servers/>
-            </div>         */}
         </div>
 
         </>

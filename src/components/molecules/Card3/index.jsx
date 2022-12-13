@@ -5,15 +5,15 @@ import star from '../../../assets/img/star.png';
 const Card3 = () => {
     return (
         <>
-        <div className="px-10 pb-5 justify-center items-center border-2 rounded border-gray-300 hover:border-red-600">
+        <div className="hidden sm:block px-5 pb-5 justify-center items-center border-2 rounded border-gray-300 hover:border-red-600">
 
-            <div className="flex">
+            <div className="flex items-center justify-around">
                 <div className="flex justify-start items-center py-5">
-                    <img src={kim} width="50" className="mr-4"/>
+                    <img src={kim} className="w-12 xl:w-12 sm:w-10 mr-4"/>
                 </div>
 
-                <div className="justify-center items-center py-5 mr-8">
-                    <p className="font-medium text-sm leading-8">
+                <div className="justify-center items-center py-5 mr-20 xl:mr-16 lg:mr-16 sm:mr-2">
+                    <p className="font-bold text-base xl:font-medium sm:font-bold xl:text-sm sm:text-xs leading-8">
                         Kim Young Jou
                     </p>
                     <p className="text-xs font-light">
@@ -22,7 +22,7 @@ const Card3 = () => {
                 </div>
 
                 <div className="flex py-5  justify-end items-center">
-                    <p className="font-medium text-sm ml-4">
+                    <p className="font-medium text-sm ml-12 xl:ml-3 md:ml-0">
                         4.5
                     </p>
                     <div>
@@ -32,7 +32,7 @@ const Card3 = () => {
             </div>
 
             <div>
-                <p>
+                <p className="xl:text-sm sm:text-sm">
                     "This is very unusual for my business that currently requires a virtual private network that has high security".
                 </p>
             </div>

@@ -11,11 +11,11 @@ const Free = () => {
                 <img src={img} width="145"/>
             </div>
 
-            <b>Premiun Plan</b>
-            <div className="px-12 text-start mt-3 ml-3 mb-20">
+            <b>Free Plan</b>
+            <div className="px-12 xl:px-12 sm:px-5 text-start mt-3 ml-3 mb-10 sm:mb-20">
                 <ul>
                     <li>
-                        <div className="inline-flex justify-center items-center leading-8 text-sm">
+                        <div className="inline-flex justify-center items-center xl:leading-8 xl:text-sm sm:text-xs">
                             <div>
                                 <img src={list} alt="list" width="10" className="mr-3"/>
                             </div>
@@ -26,7 +26,7 @@ const Free = () => {
                     </li>
 
                     <li>
-                        <div className="inline-flex justify-center items-center leading-8 text-sm">
+                        <div className="inline-flex justify-center items-center xl:leading-8 xl:text-sm sm:text-xs">
                             <div>
                                 <img src={list} alt="list" width="10" className="mr-3"/>
                             </div>
@@ -37,7 +37,7 @@ const Free = () => {
                     </li>
                     
                     <li>
-                        <div className="inline-flex justify-center items-center leading-8 text-sm">
+                        <div className="inline-flex justify-center items-center xl:leading-8 xl:text-sm sm:text-xs">
                             <div>
                                 <img src={list} alt="list" width="10" className="mr-3"/>
                             </div>
@@ -48,7 +48,7 @@ const Free = () => {
                     </li>
 
                     <li>
-                    <div className="inline-flex justify-center items-center leading-8 text-sm mb-8">
+                    <div className="inline-flex justify-center items-center xl:leading-8 xl:text-sm xl:mb-8 sm:mb-2 sm:text-xs">
                             <div>
                                 <img src={list} alt="list" width="10" className="mr-3"/>
                             </div>

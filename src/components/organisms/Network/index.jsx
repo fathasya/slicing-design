@@ -10,23 +10,16 @@ const Network = () => {
     return (
         <>
         <div className="bg-gray-100 w-full">
-            <div className="justify-center text-center p-10">
-                <p className="font-medium text-4xl mb-4">
-                    Huge Global Network <br/>
-                    of Fast VPN
+            <div className="max-w-6xl w-full mx-auto py-20 px-6 text-center">
+                <p className="font-medium text-4xl leading-10 max-w-sm mx-auto mb-5">
+                    Huge Global Network of Fast VPN
                 </p>
-                <p className="font-normal text-sm">
-                    see <b>LaslesVPN</b> everywhere to make it easier for you when you move <br/> locations.
+                <p className="font-normal text-sm leading-10 max-w-lg mx-auto">
+                    See <b>LaslesVPN</b> everywhere to make it easier for you when you move locations.
                 </p>
-            </div>
-            
-            <div className="w-full p-20 justify-center items-center text-center inline-flex">
-                <center>
-                    <img src={Peta} width="900"/>
-                </center>
-            </div>
+                <img src={Peta} className="w-full block py-10"/>
 
-                <div className="grid grid-cols-5 pt-10 pb-20 px-20">
+                <div className="grid grid-cols-5 place-items-center">
                     <div className="justify-center flex items-center">
                         <img src={netflix} width="100"/>
                     </div>
@@ -43,6 +36,7 @@ const Network = () => {
                         <img src={spotify} width="100"/>
                     </div>
                 </div>
+            </div>
         </div>
         </>
     )
