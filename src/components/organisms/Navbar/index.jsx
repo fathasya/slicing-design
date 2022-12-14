@@ -1,32 +1,62 @@
-import React from 'react';
-import BtnSignUp from '../../atoms/BtnSignUp';
-import Logo from '../../molecules/Logo';
+import React, { useState } from 'react'
+import { IconClose, IconMenu } from '../../../assets'
+import BtnSignUp from '../../atoms/BtnSignUp'
+import { NavItem } from '../../constants'
+import Logo from '../../molecules/Logo'
 
-const Navbar = () =>{
-    return(
-        <>
-            <div className='shadow-lg bg-white font-rubik text-[#4F5665]'>
-                <div className='py-6 max-w-6xl w-full mx-auto flex justify-center items-center'>
-                    <div className='md:ml-5 lg:ml-0 md:mr-20 lg:mr-40 xl:mr-60'>
-                        <Logo/>
-                    </div>         
-                    <div className='hidden md:flex justify-beetwen items-center'>
-                        <p className='md:text-xs md:mr-5 lg:mr-7 lg:ml-10'>About</p>
-                        <p className='md:text-xs md:mr-5 lg:mr-7 '>Features</p>
-                        <p className='md:text-xs md:mr-5 lg:mr-7 '>Features</p>
-                        <p className='md:text-xs md:mr-5 lg:mr-7 '>Pricing</p>
-                        <p className='md:text-xs md:mr-5 lg:mr-7 '>Testimonials</p>
-                        <p className='md:text-xs md:mr-5 lg:mr-20'>Help</p>
-                        <h2 className='md:text-xs md:mr-4 lg:mr-7 lg:ml-5'><a href='#'><b>Sign In</b></a></h2>
-                        <BtnSignUp />
-                    </div>       
+const Navbar = () => {
+  const [toogle, setToogle] = useState(false)
 
-
-                </div>
-            </div>
-        </>
-    )
+  return (
+    <>
+      <div className="font-rubik bg-white text-[#4F5665] shadow-lg">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-6 sm:px-0">
+          <div className="md:ml-5 md:mr-20 lg:ml-0 lg:mr-40 xl:mr-60">
+            <Logo />
+          </div>
+          <IconMenu
+            onClick={() => setToogle((state) => !state)}
+            className="h-6 w-6 text-gray-900 sm:hidden"
+          />
+          <div className="justify-beetwen hidden items-center md:flex">
+            {NavItem.map((item, i) => (
+              <a
+                key={i}
+                href={item.href}
+                className="md:mr-5 md:text-xs lg:mr-7"
+              >
+                {item.name}
+              </a>
+            ))}
+            <h2 className="md:mr-4 md:text-xs lg:mr-7 lg:ml-5">
+              <a href="#">
+                <b>Sign In</b>
+              </a>
+            </h2>
+            <BtnSignUp />
+          </div>
+        </div>
+      </div>
+      {toogle && (
+        <div className="fixed inset-0 z-50 bg-white">
+          <IconClose
+            onClick={() => setToogle((state) => !state)}
+            className="m-4 ml-auto h-6 w-6 text-gray-900"
+          />
+          <div className="flex flex-col space-y-4">
+            {NavItem.map(({ name, href }, i) => (
+              <a
+                href={href}
+                className="px-4 text-lg font-semibold text-gray-900"
+              >
+                {name}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
+  )
 }
 
-
-export default Navbar;
+export default Navbar
