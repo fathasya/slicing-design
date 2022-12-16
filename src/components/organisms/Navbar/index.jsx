@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { IconClose, IconMenu } from '../../../assets'
 import BtnSignUp from '../../atoms/BtnSignUp'
 import { NavItem } from '../../constants'
-import Logo from '../../molecules/Logo'
+import {Logo} from '../../molecules'
 
 const Navbar = () => {
   const [toogle, setToogle] = useState(false)
@@ -16,7 +16,7 @@ const Navbar = () => {
           </div>
           <IconMenu
             onClick={() => setToogle((state) => !state)}
-            className="h-6 w-6 text-gray-900 sm:hidden"
+            className="h-6 w-6 text-gray-900 md:hidden"
           />
           <div className="justify-beetwen hidden items-center md:flex">
             {NavItem.map((item, i) => (

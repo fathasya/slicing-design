@@ -1,11 +1,11 @@
 import React from 'react'
 
-const BtnGetStarted = (props) => {
+const BtnSubmit = (props) => {
   return (
     <>
       <div>
         <button
-          type="button"
+          type="submit"
           className="inlene-block font-rubik text-md 
                     rounded bg-red-600 px-10 py-3 font-medium 
                     leading-tight text-white shadow-lg
@@ -15,11 +15,11 @@ const BtnGetStarted = (props) => {
                     focus:shadow-lg focus:outline-none 
                     focus:ring-0 active:bg-red-800 active:shadow-lg"
         >
-          <h1>Get Started!</h1>
+          <p>Submit</p>
         </button>
       </div>
     </>
   )
 }
 
-export default BtnGetStarted
+export default BtnSubmit

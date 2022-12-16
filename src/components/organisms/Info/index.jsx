@@ -1,21 +1,18 @@
-import React from "react";
-import Users from "../../molecules/Users";
-import Locations from "../../molecules/Locations";
-import Servers from "../../molecules/Servers";
+import React from 'react'
+import { Users, Locations, Servers } from '../../molecules'
 
-const Info = () =>{
-    return(
-        <>
-        <div className="max-w-6xl mx-auto px-6 w-full drop-shadow-lg">
-            <div className="w-full sm:py-9 py-5 rounded-xl bg-white border border-gray-100 grid grid-cols-3 place-items-center">
-                <Users/>
-                <Locations/>                
-                <Servers/>
-            </div>
+const Info = () => {
+  return (
+    <>
+      <div className="mx-auto w-full max-w-6xl px-6 drop-shadow-lg">
+        <div className="grid w-full grid-cols-3 place-items-center rounded-xl border border-gray-100 bg-white py-5 sm:py-9">
+          <Users />
+          <Locations />
+          <Servers />
         </div>
-
-        </>
-    )
+      </div>
+    </>
+  )
 }
 
-export default Info;
+export default Info

@@ -1,45 +1,40 @@
-import React from "react";
-import kim from '../../../assets/img/Ellipse 175-2.png';
-import star from '../../../assets/img/star.png';
+import React from 'react'
+import kim from '../../../assets/img/Ellipse 175-2.png'
+import star from '../../../assets/img/star.png'
 
 const Card3 = () => {
-    return (
-        <>
-        <div className="hidden sm:block px-5 pb-5 justify-center items-center border-2 rounded border-gray-300 hover:border-red-600">
+  return (
+    <>
+      <div className="hidden items-center justify-center rounded border-2 border-gray-300 px-5 pb-5 hover:border-red-600 sm:block">
+        <div className="flex items-center justify-around">
+          <div className="flex items-center justify-start py-5">
+            <img src={kim} className="mr-4 w-12 sm:w-10 xl:w-12" />
+          </div>
 
-            <div className="flex items-center justify-around">
-                <div className="flex justify-start items-center py-5">
-                    <img src={kim} className="w-12 xl:w-12 sm:w-10 mr-4"/>
-                </div>
+          <div className="mr-20 items-center justify-center py-5 sm:mr-2 lg:mr-16 xl:mr-16">
+            <p className="text-base font-bold leading-8 sm:text-xs sm:font-bold xl:text-sm xl:font-medium">
+              Kim Young Jou
+            </p>
+            <p className="text-xs font-light">Seoul, South Korea</p>
+          </div>
 
-                <div className="justify-center items-center py-5 mr-20 xl:mr-16 lg:mr-16 sm:mr-2">
-                    <p className="font-bold text-base xl:font-medium sm:font-bold xl:text-sm sm:text-xs leading-8">
-                        Kim Young Jou
-                    </p>
-                    <p className="text-xs font-light">
-                        Seoul, South Korea                    
-                    </p>
-                </div>
-
-                <div className="flex py-5  justify-end items-center">
-                    <p className="font-medium text-sm ml-12 xl:ml-3 md:ml-0">
-                        4.5
-                    </p>
-                    <div>
-                        <img src={star} width="15" className="ml-3"/>
-                    </div>
-                </div>
-            </div>
-
+          <div className="flex items-center  justify-end py-5">
+            <p className="ml-12 text-sm font-medium md:ml-0 xl:ml-3">4.5</p>
             <div>
-                <p className="xl:text-sm sm:text-sm">
-                    "This is very unusual for my business that currently requires a virtual private network that has high security".
-                </p>
+              <img src={star} width="15" className="ml-3" />
             </div>
+          </div>
         </div>
-        </>
-    )
+
+        <div>
+          <p className="sm:text-sm xl:text-sm">
+            "This is very unusual for my business that currently requires a
+            virtual private network that has high security".
+          </p>
+        </div>
+      </div>
+    </>
+  )
 }
 
-
-export default Card3;
+export default Card3

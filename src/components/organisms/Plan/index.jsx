@@ -1,7 +1,5 @@
 import React from 'react'
-import Free from '../../molecules/Free'
-import Standard from '../../molecules/Standard'
-import Premiun from '../../molecules/Premium'
+import { Free, Standard, Premium } from '../../molecules'
 
 const Plan = () => {
   return (
@@ -20,7 +18,7 @@ const Plan = () => {
           <div className="mx-auto grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-5 xl:gap-10">
             <Free />
             <Standard />
-            <Premiun />
+            <Premium />
           </div>
         </div>
       </div>

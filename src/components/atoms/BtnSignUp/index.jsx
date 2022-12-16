@@ -1,24 +1,25 @@
-import React from 'react';
+import React from 'react'
 
 const BtnSignUp = () => {
-    return (
-            <>
-                <div class="flex justify-center">
-                    <button 
-                    type="button" 
-                    className="inline-block px-5 sm:px-7 py-2 
-                    font-rubik text-red-600 font-medium text-xs 
-                    leading-tight rounded-full border-2 border-red-600
-                    hover:bg-red-600 hover:shadow-lg hover:text-white
-                    focus:bg-red-600 focus:shadow-lg focus:text-white
+  return (
+    <>
+      <div class="flex justify-center">
+        <button
+          type="button"
+          className="font-rubik inline-block rounded-full border-2 
+                    border-red-600 px-5 py-2 text-xs 
+                    font-medium leading-tight text-red-600 transition
+                    duration-150 ease-in-out hover:bg-red-600
+                    hover:text-white hover:shadow-lg focus:bg-red-600
+                    focus:text-white focus:shadow-lg 
                     focus:outline-none focus:ring-0 
-                    active:bg-red-800 active:shadow-lg 
-                    transition duration-150 ease-in-out">
-                        Sign Up
-                    </button>
-                </div>
-            </>
-        )
-    };
+                    active:bg-red-800 active:shadow-lg sm:px-7"
+        >
+          Sign Up
+        </button>
+      </div>
+    </>
+  )
+}
 
-export default BtnSignUp;
+export default BtnSignUp
