@@ -3,7 +3,7 @@ import React from 'react'
 const BtnSignUp = () => {
   return (
     <>
-      <div class="flex justify-center">
+      <div className="flex justify-center">
         <button
           type="button"
           className="font-rubik inline-block rounded-full border-2 

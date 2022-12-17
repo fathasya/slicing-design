@@ -5,7 +5,7 @@ import star from '../../../assets/img/star.png'
 const Card1 = () => {
   return (
     <>
-      <div className="items-center justify-center rounded border-2 border-gray-300 px-5 pb-5 hover:border-red-600">
+      <div className="m-5 h-56 sm:h-40 lg:h-52 items-center justify-center rounded border-2 border-gray-300 px-5 pb-5 hover:border-red-600">
         <div className="flex justify-around">
           <div className="mr-2 flex items-center justify-center py-5 sm:mr-3 lg:mr-16 xl:mr-16">
             <img src={vie} className="mr-4 w-12 sm:w-10 xl:w-12" />

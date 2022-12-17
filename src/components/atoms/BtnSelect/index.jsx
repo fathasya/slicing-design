@@ -3,7 +3,7 @@ import React from 'react'
 const BtnSelect = (props) => {
   return (
     <>
-      <div class="flex justify-center space-x-2">
+      <div className="flex justify-center space-x-2">
         <button
           type="button"
           className="font-rubik inline-block rounded-full 
