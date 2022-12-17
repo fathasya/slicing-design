@@ -1,59 +1,93 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Carousel from 'react-multi-carousel'
 import { Card1, Card2, Card3 } from '../../molecules'
 import { union, Ellipse1 } from '../../../assets'
 
 const Testimonials = () => {
+  const [slideActive, setSlideActive] = useState()
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 3,
-      slidesToSlide: 3, // optional, default to 1.
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
       items: 2,
-      slidesToSlide: 2, // optional, default to 1.
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1,
-      slidesToSlide: 1, // optional, default to 1.
     },
   }
 
   const CustomDot = ({ onClick, ...rest }) => {
-    const {
-      onMove,
-      index,
-      active,
-      carouselState: { currentSlide, deviceType },
-    } = rest
-    // const carouselItems = [<Card1/>, <Card3/>, <Card3/>]
-    // onMove means if dragging or swiping in progress.
-    // active is provided by this lib for checking if the item is active or not.
+    const { active, index } = rest
+    active && setSlideActive(index)
     return (
       <button
-        className={active ? 'w-6 h-6 bg-red-600 ' : 'w-6 h-6 bg-gray-100'}
-        onClick={() => onClick()}
+        className={`${
+          active ? 'w-8 bg-red-600' : 'w-4 bg-gray-300'
+        } mx-2 h-4 rounded-full duration-500`}
+        onClick={onClick}
+      />
+    )
+  }
+
+  const CustomRightArrow = ({ onClick }) => {
+    return (
+      <button
+        className="absolute bottom-0 right-5 z-10 flex items-center justify-center rounded-full border border-red-500 p-2"
+        onClick={onClick}
       >
-        {/* {React.Children.toArray(carouselItems)[index]} */}
+        <svg
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-4 w-4 text-red-500"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+          />
+        </svg>
       </button>
     )
   }
-  // <Carousel showDots customDot={<CustomDot />}>
-  //   {carouselItems}
-  // </Carousel>
 
-  const CustomRightArrow = ({ onClick, ...rest }) => {
-    const {
-      onMove,
-      carouselState: { currentSlide, deviceType }
-    } = rest;
-    // onMove means if dragging or swiping in progress.
-    return <button  className='w-6 h-6 bg-red-600 right-0' onClick={() => onClick()} />;
-  };
-  <Carousel  />;
+  const CustomLeftArrow = ({ onClick }) => {
+    return (
+      <button
+        className="absolute bottom-0 right-16 z-10 flex items-center justify-center rounded-full border border-red-500 p-2"
+        onClick={onClick}
+      >
+        <svg
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-4 w-4 text-red-500"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M15.75 19.5L8.25 12l7.5-7.5"
+          />
+        </svg>
+      </button>
+    )
+  }
+
+  const carouselItems = [
+    <Card1 />,
+    <Card2 />,
+    <Card3 />,
+    <Card1 />,
+    <Card2 />,
+    <Card3 />,
+  ]
 
   return (
     <>
@@ -69,42 +103,28 @@ const Testimonials = () => {
             </p>
           </div>
           <Carousel
-            swipeable={false}
-            draggable={false}
-            showDots={true}
+            showDots
             customDot={<CustomDot />}
             responsive={responsive}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            // autoPlay={this.props.deviceType !== 'mobile' ? true : false}
-            autoPlaySpeed={1000}
-            keyBoardControl={false}
-            customTransition="all .5"
-            transitionDuration={500}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={['desktop', 'tablet', 'mobile']}
-            // deviceType={this.props.deviceType}
+            ssr
+            infinite
             customRightArrow={<CustomRightArrow />}
-            dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px"
-            className='relative'
+            customLeftArrow={<CustomLeftArrow />}
+            className="py-10"
           >
-            <div><Card1 /></div>
-            <div><Card2 /></div>
-            <div><Card3 /></div>
-            <div><Card2 /></div>
-            <div><Card1 /></div>
-            {/* {carouselItems} */}
+            {carouselItems.map((item, i) => {
+              var active = slideActive + 1
+              if (active === carouselItems.length) active = 0
+              return (
+                <div
+                  key={i}
+                  className={`${active == i && 'scale-110'} duration-500`}
+                >
+                  {item}
+                </div>
+              )
+            })}
           </Carousel>
-
-
-          
-          {/* <div className="flex items-center justify-center p-10">
-            <img src={union} width="30" className="mr-4" />
-            <img src={Ellipse1} width="12" className="mr-4" />
-            <img src={Ellipse1} width="12" className="mr-4" />
-            <img src={Ellipse1} width="12" className="mr-4" />
-          </div> */}
         </div>
       </div>
     </>
